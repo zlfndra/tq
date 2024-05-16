@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terima Kasih</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            color: #333;
+            font-size: 48px;
+        }
+        .love {
+            position: absolute;
+            animation: loveAnimation 8s infinite;
+        }
+        @keyframes loveAnimation {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-100px) rotate(45deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-200px) rotate(90deg);
+                opacity: 0.5;
+            }
+            75% {
+                transform: translateY(-300px) rotate(135deg);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-400px) rotate(180deg);
+                opacity: 0;
+            }
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            color: #666;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TERIMA KASIH</h1>
+    <div class="footer">BY ZULFIANDRA AL FARIDZI</div>
+    <script>
+        function createLove() {
+            const love = document.createElement("span");
+            love.innerHTML = "❤️";
+            love.classList.add("love");
+            love.style.left = Math.random() * window.innerWidth + "px";
+            love.style.top = Math.random() * window.innerHeight + "px";
+            love.style.fontSize = Math.random() * 30 + 10 + "px";
+            document.body.appendChild(love);
+
+            setTimeout(() => {
+                love.remove();
+            }, 8000);
+        }
+
+        setInterval(createLove, 100);
+    </script>
+</body>
+</html>
